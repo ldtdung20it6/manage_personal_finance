@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "984722891405",
+    "project_id": "managepersonalfinance-50e9e",
+    "storage_bucket": "managepersonalfinance-50e9e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:984722891405:android:224563aa3c905339ab38c4",
+        "android_client_info": {
+          "package_name": "com.example.manage_personal_finance"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-FSegYUnti82ePMOuGXDmMxheKezDdDE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
