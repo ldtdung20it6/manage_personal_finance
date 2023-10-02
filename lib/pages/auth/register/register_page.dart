@@ -2,12 +2,50 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:manage_personal_finance/pages/auth/register/register_controller.dart';
 
-class RegisterPage extends GetWidget<RegisterController>{
+class RegisterPage extends GetWidget<RegisterController> {
   var controller = Get.put(RegisterController());
   var USERNAME = 'username';
+  var EMAIL = 'email';
   var PASSWORD = 'password';
+  var REPEART_PASSWORD = 'repeart_password';
   var username_controller = TextEditingController();
+  var email_controller = TextEditingController();
   var password_controller = TextEditingController();
+  var repeart_password_controller = TextEditingController();
+
+  inputController(TYPE) {
+    if (TYPE == USERNAME) {
+      return username_controller;
+    } else if (TYPE == PASSWORD) {
+      return password_controller;
+    } else if (TYPE == REPEART_PASSWORD) {
+      return repeart_password_controller;
+    } else if (TYPE == EMAIL) {
+      return email_controller;
+    }
+  }
+
+  inputLabelText(TYPE) {
+    if (TYPE == USERNAME) {
+      return 'Tên người dùng';
+    } else if (TYPE == PASSWORD) {
+      return 'Mật khẩu';
+    } else if (TYPE == REPEART_PASSWORD) {
+      return 'Nhập lại Mật khẩu';
+    } else if (TYPE == EMAIL) {
+      return 'Nhập Email';
+    }
+  }
+
+  hiddenPassword(TYPE) {
+    if (TYPE == PASSWORD) {
+      return true;
+    } else if (TYPE == REPEART_PASSWORD) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   RegisterPage({super.key});
 
@@ -31,9 +69,12 @@ class RegisterPage extends GetWidget<RegisterController>{
             child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
               renderInputRegister(USERNAME),
               SizedBox(height: Get.height * 0.03),
+              renderInputRegister(EMAIL),
+              SizedBox(height: Get.height * 0.03),
               renderInputRegister(PASSWORD),
               SizedBox(height: Get.height * 0.03),
-              renderButtonLogin()
+              renderInputRegister(REPEART_PASSWORD),
+              renderButtonRegister()
             ]),
           ),
         ]),
@@ -42,29 +83,29 @@ class RegisterPage extends GetWidget<RegisterController>{
   }
 
   Widget renderInputRegister(TYPE) {
-    return Container(
+    return SizedBox(
       width: Get.width * 0.9,
       height: Get.height * 0.08,
       child: TextField(
-        controller:
-            TYPE == USERNAME ? username_controller : password_controller,
-        obscureText: TYPE == USERNAME ? false : true,
+        controller: inputController(TYPE),
+        obscureText: hiddenPassword(TYPE),
         decoration: InputDecoration(
             border: const OutlineInputBorder(
-              borderSide: BorderSide(
+                borderSide: BorderSide(
               color: Colors.blue,
               width: 2.0,
             )),
-            labelText: TYPE == USERNAME ? 'Tên người dùng' : 'Mật khẩu',
+            labelText: inputLabelText(TYPE),
             labelStyle: const TextStyle(color: Colors.white)),
       ),
     );
   }
 
-  Widget renderButtonLogin() {
+  Widget renderButtonRegister() {
     return GestureDetector(
       onTap: () {
-        // controller.register(username_controller.text, password_controller.text);
+        controller.register(username_controller.text,email_controller.text, password_controller.text,
+            repeart_password_controller.text);
       },
       child: Container(
         width: Get.width * 0.9,
@@ -77,5 +118,4 @@ class RegisterPage extends GetWidget<RegisterController>{
       ),
     );
   }
-
 }

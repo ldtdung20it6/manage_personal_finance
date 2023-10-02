@@ -16,7 +16,7 @@ class SplashController extends GetxController{
 
   _setInitialScreen(User? user) {
     if (user == null) {
-      Get.offAndToNamed(AppRoutes.LOGIN);
+      Get.offAndToNamed(AppRoutes.WELCOME);
     } else {
       Get.offAndToNamed(AppRoutes.DASHBOARD);
     }

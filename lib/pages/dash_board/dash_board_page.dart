@@ -1,8 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:manage_personal_finance/pages/dash_board/dash_board_controller.dart';
 import 'package:manage_personal_finance/pages/home/home_page.dart';
+import 'package:manage_personal_finance/pages/profile/profile_page.dart';
 
 
 class DashBoardPage extends GetWidget<DashboardController> {
@@ -22,7 +24,7 @@ class DashBoardPage extends GetWidget<DashboardController> {
                   // SearchPage(),
                   // CreatePage(),
                   // NotificationPage(),
-                  // ProfilePage(uid: FirebaseAuth.instance.currentUser!.uid,)
+                  ProfilePage()
                 ],
               ),
             ),

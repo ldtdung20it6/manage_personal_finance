@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 
 class LoginPage extends GetWidget<LoginController> {
   var controller = Get.put(LoginController());
-  var USERNAME = 'username';
+  var EMAIL = 'email';
   var PASSWORD = 'password';
-  var username_controller = TextEditingController();
+  var email_controller = TextEditingController();
   var password_controller = TextEditingController();
   LoginPage({super.key});
 
@@ -28,7 +28,7 @@ class LoginPage extends GetWidget<LoginController> {
           ),
           Center(
             child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
-              renderInputLogin(USERNAME),
+              renderInputLogin(EMAIL),
               SizedBox(height: Get.height * 0.03),
               renderInputLogin(PASSWORD),
               SizedBox(height: Get.height * 0.03),
@@ -46,15 +46,15 @@ class LoginPage extends GetWidget<LoginController> {
       height: Get.height * 0.08,
       child: TextField(
         controller:
-            TYPE == USERNAME ? username_controller : password_controller,
-        obscureText: TYPE == USERNAME ? false : true,
+            TYPE == EMAIL ? email_controller : password_controller,
+        obscureText: TYPE == EMAIL ? false : true,
         decoration: InputDecoration(
             border: const OutlineInputBorder(
               borderSide: BorderSide(
               color: Colors.blue,
               width: 2.0,
             )),
-            labelText: TYPE == USERNAME ? 'Tên người dùng hoặc email' : 'Mật khẩu',
+            labelText: TYPE == EMAIL ? 'Nhập Email' : 'Mật khẩu',
             labelStyle: const TextStyle(color: Colors.white)),
       ),
     );
@@ -63,7 +63,7 @@ class LoginPage extends GetWidget<LoginController> {
   Widget renderButtonLogin() {
     return GestureDetector(
       onTap: () {
-        controller.login(username_controller.text, password_controller.text);
+        controller.login(email_controller.text, password_controller.text);
       },
       child: Container(
         width: Get.width * 0.9,
