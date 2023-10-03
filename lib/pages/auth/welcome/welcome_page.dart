@@ -3,6 +3,7 @@ import 'package:manage_personal_finance/pages/auth/login/login_page.dart';
 import 'package:manage_personal_finance/pages/auth/register/register_page.dart';
 import 'package:manage_personal_finance/pages/auth/welcome/welcome_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:manage_personal_finance/routes/app_routes.dart';
 
 class WelcomePage extends GetWidget<WelcomeController> {
   var controller = Get.put(WelcomeController());
@@ -36,10 +37,10 @@ class WelcomePage extends GetWidget<WelcomeController> {
     return GestureDetector(
       onTap: TYPE == LOGIN
           ? () {
-              Get.to(() => LoginPage());
+              Get.toNamed(AppRoutes.LOGIN);
             }
           : () {
-              Get.to(() => RegisterPage());
+              Get.toNamed(AppRoutes.REGISTER);
             },
       child: Container(
         width: Get.width * 0.9,

@@ -2,6 +2,7 @@ class AppRoutes{
   static const String SPLASH = "/splash";
   static const String DASHBOARD = "/";
   static const String LOGIN = "/Login";
+  static const String REGISTER = "/register";
   static const String HOME = "/Home";
   static const String ANALYTIC = "/analytic";
   static const String WELCOME = "/welcome";

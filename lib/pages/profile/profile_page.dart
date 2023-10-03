@@ -15,6 +15,7 @@ class ProfilePage extends GetWidget<ProfileController> {
                 children: [
                   Text('Tên người dùng: ${controller.userData['user_name']}'),
                   Text('Email: ${controller.userData['email']}'),
+                  ElevatedButton(onPressed: () => controller.signOut(), child: Text('Sign out'))
                 ],
               )
             : Center(
