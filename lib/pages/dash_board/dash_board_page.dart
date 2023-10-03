@@ -6,7 +6,7 @@ import 'package:manage_personal_finance/pages/dash_board/dash_board_controller.d
 import 'package:manage_personal_finance/pages/home/home_page.dart';
 import 'package:manage_personal_finance/pages/notification/notification_page.dart';
 import 'package:manage_personal_finance/pages/profile/profile_page.dart';
-import 'package:manage_personal_finance/pages/transaction_history/transaction_history_page.dart';
+import 'package:manage_personal_finance/pages/analytic/analytic_page.dart';
 
 
 class DashBoardPage extends GetWidget<DashboardController> {
@@ -23,7 +23,7 @@ class DashBoardPage extends GetWidget<DashboardController> {
                 index: controller.tabIndex,
                 children: [
                   HomePage(),
-                  TransactionHistoryPage(),
+                  AnalyticPage(),
                   CreatePage(),
                   NotificationPage(),
                   ProfilePage()

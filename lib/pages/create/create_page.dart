@@ -49,8 +49,8 @@ class CreatePage extends GetWidget<CreateController> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      renderInput(ICON),
-                      const SizedBox(height: 10),
+                      // renderInput(ICON),
+                      // const SizedBox(height: 10),
                       renderInput(NAME),
                       const SizedBox(height: 10),
                       renderInput(DESCRIPTION),
@@ -87,7 +87,7 @@ class CreatePage extends GetWidget<CreateController> {
   Widget renderButtonSave() {
     return ElevatedButton(
         onPressed: () {
-          controller.save(_txtIconController.text, _txtNameController.text,_txtDescriptionController.text,
+          controller.save('null', _txtNameController.text,_txtDescriptionController.text,
               _txtPriceController.text);
         },
         child: const Text('Lưu lại'));

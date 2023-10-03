@@ -82,9 +82,9 @@ class HomePage extends GetWidget<HomeController> {
                                   : Container();
                             }),
                             const SizedBox(height: 10),
-                            const Text(
-                              "Nghề nghiệp",
-                              style: TextStyle(
+                            Text(
+                              '${controller.profileController.userData['email']}',
+                              style: const TextStyle(
                                   fontSize: 13,
                                   fontWeight: FontWeight.w500,
                                   color: Colors.black),
@@ -199,13 +199,11 @@ class HomePage extends GetWidget<HomeController> {
                             )),
                         IconBadge(
                           icon: const Icon(Icons.notifications_none),
-                          itemCount: 1,
-                          badgeColor: Colors.red,
                           itemColor: const Color(0xff565c95),
                           hideZero: true,
                           top: -1,
                           onTap: () {
-                            print('test');
+                            Get.toNamed(AppRoutes.ANALYTIC);
                           },
                         ),
                       ],

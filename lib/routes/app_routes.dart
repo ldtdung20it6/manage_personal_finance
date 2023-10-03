@@ -6,8 +6,7 @@ class AppRoutes{
   static const String HOME = "/Home";
   static const String ANALYTIC = "/analytic";
   static const String WELCOME = "/welcome";
-
-  // static const String CREATE = "/create";
-  // static const String NOTIFICATION = "/notification";
-  // static const String PROFILE = "/profile";
+  static const String CREATE = "/create";
+  static const String NOTIFICATION = "/notification";
+  static const String PROFILE = "/profile";
 }

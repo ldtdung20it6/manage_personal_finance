@@ -6,6 +6,7 @@ import 'package:manage_personal_finance/pages/dash_board/dash_board_binding.dart
 import 'package:manage_personal_finance/pages/dash_board/dash_board_page.dart';
 import 'package:manage_personal_finance/pages/dash_board/splash/splash_page.dart';
 import 'package:manage_personal_finance/pages/home/home_page.dart';
+import 'package:manage_personal_finance/pages/analytic/analytic_page.dart';
 
 import 'app_routes.dart';
 
@@ -16,6 +17,8 @@ class AppPages{
     GetPage(name: AppRoutes.DASHBOARD, page: () => DashBoardPage(),binding: DashboardBinding()),
     GetPage(name: AppRoutes.LOGIN, page: () => LoginPage()),
     GetPage(name: AppRoutes.REGISTER, page: () => RegisterPage()),
+    GetPage(name: AppRoutes.HOME, page: () => HomePage()),
+    GetPage(name: AppRoutes.ANALYTIC, page: () => AnalyticPage()),
     GetPage(name: AppRoutes.HOME, page: () => HomePage()),
   ];
 }
