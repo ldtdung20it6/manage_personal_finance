@@ -1,6 +1,4 @@
 import 'package:get/get.dart';
-import 'package:manage_personal_finance/pages/auth/login/login_page.dart';
-import 'package:manage_personal_finance/pages/auth/register/register_page.dart';
 import 'package:manage_personal_finance/pages/auth/welcome/welcome_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:manage_personal_finance/routes/app_routes.dart';
