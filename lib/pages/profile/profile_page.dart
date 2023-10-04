@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:manage_personal_finance/pages/profile/profile_controller.dart';
@@ -24,7 +25,7 @@ class ProfilePage extends GetWidget<ProfileController> {
 
   buttonType(TYPE) {
     if (TYPE == INFO) {
-      return controller;
+      return Get.toNamed(AppRoutes.EDIT_PROFILE);
     } else if (TYPE == EXPENSE_MANAGEMENT) {
       return controller;
     } else if (TYPE == ABOUT_APP) {
@@ -79,15 +80,20 @@ class ProfilePage extends GetWidget<ProfileController> {
                   ),
                   Column(
                     children: [
-                      Container(
-                        width: 70,
-                        height: 70,
-                        decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                                image: AssetImage("assets/images/avatar.png"),
-                                fit: BoxFit.cover)),
-                      ),
+                      Obx(() {
+                        return controller.userData.isNotEmpty
+                            ? Container(
+                                width: 70,
+                                height: 70,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    image: DecorationImage(
+                                        image: NetworkImage(
+                                            controller.userData['avatarUrl']),
+                                        fit: BoxFit.cover)),
+                              )
+                            : Container();
+                      }),
                       const SizedBox(
                         height: 10,
                       ),
@@ -139,7 +145,9 @@ class ProfilePage extends GetWidget<ProfileController> {
 
   Widget renderListFuncMenu(TYPE) {
     return GestureDetector(
-      onTap: () => buttonType(TYPE),
+      onTap: () {
+        buttonType(TYPE);
+      },
       child: Container(
         margin: const EdgeInsets.only(top: 10, left: 25, right: 25, bottom: 10),
         width: Get.width,

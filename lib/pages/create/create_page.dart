@@ -49,8 +49,6 @@ class CreatePage extends GetWidget<CreateController> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      // renderInput(ICON),
-                      // const SizedBox(height: 10),
                       renderInput(NAME),
                       const SizedBox(height: 10),
                       renderInput(DESCRIPTION),
