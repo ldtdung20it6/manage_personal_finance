@@ -30,7 +30,7 @@ class ProfilePage extends GetWidget<ProfileController> {
     if (TYPE == INFO) {
       return Get.toNamed(AppRoutes.EDIT_PROFILE);
     } else if (TYPE == EXPENSE_MANAGEMENT) {
-      return controller;
+      return Get.toNamed(AppRoutes.EXPENSE_MANAGEMENT);
     } else if (TYPE == ANALYTIC) {
       return Get.toNamed(AppRoutes.ANALYTIC);
     } else if (TYPE == ABOUT_APP) {

@@ -8,6 +8,7 @@ import 'package:manage_personal_finance/pages/dash_board/dash_board_page.dart';
 import 'package:manage_personal_finance/pages/dash_board/splash/splash_page.dart';
 import 'package:manage_personal_finance/pages/home/home_page.dart';
 import 'package:manage_personal_finance/pages/profile/edit_profile/edit_profile_page.dart';
+import 'package:manage_personal_finance/pages/profile/expense_management/expense_management_page.dart';
 
 import 'app_routes.dart';
 
@@ -21,6 +22,7 @@ class AppPages{
     GetPage(name: AppRoutes.REGISTER, page: () => RegisterPage()),
     GetPage(name: AppRoutes.HOME, page: () => HomePage()),
     GetPage(name: AppRoutes.EDIT_PROFILE, page: () => EditProfilePage()),
-    GetPage(name: AppRoutes.ANALYTIC, page: () => AnalyticsPage())
+    GetPage(name: AppRoutes.ANALYTIC, page: () => AnalyticsPage()),
+    GetPage(name: AppRoutes.EXPENSE_MANAGEMENT, page: () => expenseManagementPage()),
   ];
 }

@@ -10,4 +10,5 @@ class AppRoutes{
   static const String NOTIFICATION = "/notification";
   static const String PROFILE = "/profile";
   static const String EDIT_PROFILE = "/edit-profile";
+  static const String EXPENSE_MANAGEMENT = "/expense_management";
 }
