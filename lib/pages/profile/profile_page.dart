@@ -10,10 +10,13 @@ class ProfilePage extends GetWidget<ProfileController> {
   var SINGOUT = 'singout';
   var ABOUT_APP = 'about_app';
   var EXPENSE_MANAGEMENT = 'expense_management';
+  var ANALYTIC = 'analytic';
 
   textType(TYPE) {
     if (TYPE == INFO) {
       return 'Thông tin cá nhân';
+    } else if (TYPE == ANALYTIC) {
+      return 'Phân tích chi tiêu';
     } else if (TYPE == EXPENSE_MANAGEMENT) {
       return 'Quản lý chi tiêu';
     } else if (TYPE == ABOUT_APP) {
@@ -28,6 +31,8 @@ class ProfilePage extends GetWidget<ProfileController> {
       return Get.toNamed(AppRoutes.EDIT_PROFILE);
     } else if (TYPE == EXPENSE_MANAGEMENT) {
       return controller;
+    } else if (TYPE == ANALYTIC) {
+      return Get.toNamed(AppRoutes.ANALYTIC);
     } else if (TYPE == ABOUT_APP) {
       return controller;
     } else if (TYPE == SINGOUT) {
@@ -134,6 +139,7 @@ class ProfilePage extends GetWidget<ProfileController> {
             children: [
               renderListFuncMenu(INFO),
               renderListFuncMenu(EXPENSE_MANAGEMENT),
+              renderListFuncMenu(ANALYTIC),
               renderListFuncMenu(ABOUT_APP),
               renderListFuncMenu(SINGOUT),
             ],

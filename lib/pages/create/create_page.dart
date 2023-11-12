@@ -32,7 +32,7 @@ class CreatePage extends GetWidget<CreateController> {
       return 'Nhập tên loại chi tiêu';
     } else if (TYPE == PRICE) {
       return 'Nhập số tiền chi tiêu';
-    } else if (TYPE == DESCRIPTION){
+    } else if (TYPE == DESCRIPTION) {
       return 'Nhập mô tả';
     }
   }
@@ -41,7 +41,12 @@ class CreatePage extends GetWidget<CreateController> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            appBar: AppBar(title: const Text('Thêm chi tiêu mới')),
+            appBar: AppBar(
+              leading: null,
+              title: const Text('Thêm chi tiêu mới',style: TextStyle(color: Colors.black),),
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+            ),
             body: SingleChildScrollView(
               child: Center(
                 child: SizedBox(
@@ -85,8 +90,8 @@ class CreatePage extends GetWidget<CreateController> {
   Widget renderButtonSave() {
     return ElevatedButton(
         onPressed: () {
-          controller.save('null', _txtNameController.text,_txtDescriptionController.text,
-              _txtPriceController.text);
+          controller.save('null', _txtNameController.text,
+              _txtDescriptionController.text, _txtPriceController.text);
         },
         child: const Text('Lưu lại'));
   }

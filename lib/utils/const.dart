@@ -1,0 +1,1 @@
+const String DefaultAvatar = 'https://firebasestorage.googleapis.com/v0/b/managepersonalfinance-50e9e.appspot.com/o/default_avatar%2F360_F_549983970_bRCkYfk0P6PP5fKbMhZMIb07mCJ6esXL.jpg?alt=media&token=1724c67a-e83d-4e64-a1c5-eac0dd818a86';

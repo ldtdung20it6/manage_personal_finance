@@ -8,7 +8,7 @@ class RegisterController extends GetxController {
       RegisterProvider().register(user_name,email, password).then((user) {
         if (user != null) {
           Get.snackbar('Đăng ký thành công', 'Success');
-          Get.offAndToNamed(AppRoutes.DASHBOARD);
+          Get.offAllNamed(AppRoutes.DASHBOARD);
         } else {
           Get.snackbar('Đăng ký thất bại', 'Error');
         }

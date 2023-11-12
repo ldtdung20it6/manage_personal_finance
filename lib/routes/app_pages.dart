@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:manage_personal_finance/pages/analytic/analytic_page%20.dart';
 import 'package:manage_personal_finance/pages/auth/login/login_page.dart';
 import 'package:manage_personal_finance/pages/auth/register/register_page.dart';
 import 'package:manage_personal_finance/pages/auth/welcome/welcome_page.dart';
@@ -14,10 +15,12 @@ class AppPages{
   static var list = [
     GetPage(name: AppRoutes.SPLASH, page: () => const SplashView()),
     GetPage(name: AppRoutes.WELCOME, page: () => WelcomePage()),
-    GetPage(name: AppRoutes.DASHBOARD, page: () => DashBoardPage(),binding: DashboardBinding()),
+    // GetPage(name: AppRoutes.DASHBOARD, page: () => DashBoardPage(),binding: DashboardBinding()),
+    GetPage(name: AppRoutes.DASHBOARD, page: () => DashBoardPage()),
     GetPage(name: AppRoutes.LOGIN, page: () => LoginPage()),
     GetPage(name: AppRoutes.REGISTER, page: () => RegisterPage()),
     GetPage(name: AppRoutes.HOME, page: () => HomePage()),
     GetPage(name: AppRoutes.EDIT_PROFILE, page: () => EditProfilePage()),
+    GetPage(name: AppRoutes.ANALYTIC, page: () => AnalyticsPage())
   ];
 }

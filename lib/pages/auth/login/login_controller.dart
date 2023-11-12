@@ -9,7 +9,7 @@ class LoginController extends GetxController{
           .signInWithEmailAndPassword(email: email, password: password);
       if (UserCredential.user?.uid != null) {
         Get.snackbar('Login', 'Success');
-        Get.offAndToNamed(AppRoutes.DASHBOARD);
+        Get.offAllNamed(AppRoutes.DASHBOARD);
       }else{
         Get.snackbar('Login False', 'Error');
       }
