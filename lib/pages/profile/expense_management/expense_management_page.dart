@@ -10,6 +10,9 @@ class expenseManagementPage extends GetWidget<expenseManagementController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Quản lý chi tiêu'),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
@@ -53,23 +56,24 @@ class expenseManagementPage extends GetWidget<expenseManagementController> {
                   ),
                 ),
                 const SizedBox(
-            height: 5,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                Obx(() {
-                  if (controller.createController.expenses.isEmpty) {
-                    return const Center(
-                      child: Text('Không có khoản chi tiêu nào.'),
-                    );
-                  }
-                  return renderFinance(controller.createController.expenses);
-                }),
-              ],
-            ),
-          )
+                  height: 5,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Obx(() {
+                        if (controller.createController.expenses.isEmpty) {
+                          return const Center(
+                            child: Text('Không có khoản chi tiêu nào.'),
+                          );
+                        }
+                        return renderFinance(
+                            controller.createController.expenses);
+                      }),
+                    ],
+                  ),
+                )
               ],
             ),
           ),
@@ -77,18 +81,15 @@ class expenseManagementPage extends GetWidget<expenseManagementController> {
       ),
     );
   }
-Widget renderFinance(List<Map<String, dynamic>> expenses) {
-  return GestureDetector(
-    onTap: () {
-      print('click');
-    },
-    child: Column(
+
+  Widget renderFinance(List<Map<String, dynamic>> expenses) {
+    return Column(
       children: expenses.map((expense) {
         var iconCode = expense['icon'];
         var name = expense['name'];
         var description = expense['description'];
         var price = expense['price'];
-  
+
         return Container(
           margin: const EdgeInsets.only(
             top: 20,
@@ -178,9 +179,14 @@ Widget renderFinance(List<Map<String, dynamic>> expenses) {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      IconButton(onPressed: (){
-                        
-                      }, icon: const Icon(Icons.delete)),
+                      IconButton(
+                        onPressed: () {
+                          print(expense);
+                          controller.onDeleteExpense(
+                              expense);
+                        },
+                        icon: const Icon(Icons.delete),
+                      ),
                     ],
                   ),
                 ),
@@ -189,7 +195,6 @@ Widget renderFinance(List<Map<String, dynamic>> expenses) {
           ),
         );
       }).toList(),
-    ),
-  );
-}
+    );
+  }
 }
